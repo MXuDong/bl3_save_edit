@@ -1,22 +1,19 @@
-![Build](https://github.com/ZakisM/bl3_save_edit/actions/workflows/ci.yml/badge.svg)
-![](https://img.shields.io/github/downloads/ZakisM/bl3_save_edit/latest/total)
-![](https://img.shields.io/github/downloads/ZakisM/bl3_save_edit/total)
-
 # Borderlands 3 Save Editor
 
-[Origin repo: https://github.com/ZakisM/bl3_save_edit](https://github.com/ZakisM/bl3_save_edit)
-[中文版](./docs/README_ZHCN.md)
+[源仓库](https://github.com/ZakisM/bl3_save_edit)
+[English](../README.md)
 
-A tool to help you modify your Borderlands 3 Saves and Profiles.
+一个帮助你修改《无助之地 3》的存档和配置的工具。
 
-Currently it runs on Windows, Mac OS and Linux. It supports modifying PC saves as well as decrypted PS4 saves (and
-converting between them).
+> 本仓库为 fork 仓库
 
-# Screenshot
+目前支持在 Windows，Mac OS 和 Linux 平台运行。他支持修改 PC 端存档以及已经解密的 PS4 存档（并且在两个平台相互转换）。
+
+# 截图
 
 <img width="1762" alt="Screenshot 2021-10-13 at 16 03 15" src="https://user-images.githubusercontent.com/8143258/137160314-81ff5ba1-b89c-4c9c-a7e8-ae905a101fe9.png">
 
-# How to use
+# 使用？
 
 Visit [Releases](https://github.com/ZakisM/bl3_save_edit/releases) and download the corresponding version for your
 platform.
@@ -27,17 +24,17 @@ folder the next time you open the program.
 
 # Notices
 
-The editor will make backups for you before saving your files, but I recommend you make your own backups just in case.
+编辑器会在保存文件之前为您备份，但我建议您自己备份以防万一出现什么奇怪的问题。
 
-# Building from scratch
+# 从稳定分支构建
 
-First you must install [Rust](https://www.rust-lang.org/).
+首先你需要安装 [Rust](https://www.rust-lang.org/).
 
-Then, clone the project and run:
+然后克隆仓库并运行指令：
 
 `cargo build`
 
-For a release optimized build run:
+发布一个稳定版本：
 
 `cargo build --release`
 
