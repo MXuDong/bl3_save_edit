@@ -31,7 +31,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
         Row::new()
             .push(
                 LabelledElement::create(
-                    "Money",
+                    "金钱",
                     Length::Units(75),
                     NumberInput::new(
                         &mut currency_state.money_input_state,
@@ -48,7 +48,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
                     )
                     .0
                     .font(ST_HEI_TI_LIGHT)
-                    .padding(10)
+                    .padding(15)
                     .size(17)
                     .style(Bl3UiStyle)
                     .into_element(),
@@ -60,7 +60,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
             .push(
                 Button::new(
                     &mut currency_state.max_money_button_state,
-                    Text::new("Max").font(ST_HEI_TI_LIGHT).size(17),
+                    Text::new("最大").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(InteractionMessage::ManageSaveInteraction(
                     ManageSaveInteractionMessage::Currency(
@@ -81,7 +81,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
         Row::new()
             .push(
                 LabelledElement::create(
-                    "Eridium",
+                    "E 币/镒币",
                     Length::Units(75),
                     NumberInput::new(
                         &mut currency_state.eridium_input_state,
@@ -98,7 +98,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
                     )
                     .0
                     .font(ST_HEI_TI_LIGHT)
-                    .padding(10)
+                    .padding(15)
                     .size(17)
                     .style(Bl3UiStyle)
                     .into_element(),
@@ -110,7 +110,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
             .push(
                 Button::new(
                     &mut currency_state.max_eridium_button_state,
-                    Text::new("Max").font(ST_HEI_TI_LIGHT).size(17),
+                    Text::new("最大").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(InteractionMessage::ManageSaveInteraction(
                     ManageSaveInteractionMessage::Currency(

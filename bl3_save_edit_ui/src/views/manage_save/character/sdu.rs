@@ -22,23 +22,25 @@ use crate::widgets::text_margin::TextMargin;
 #[derivative(Debug, Default)]
 pub struct SduUnlockField {
     name: String,
+    view_name: String,
     text_margin: usize,
     pub sdu_slot: SaveSduSlot,
     pub input: i32,
     input_state: text_input::State,
     #[derivative(
-        Debug = "ignore",
-        Default(value = "Rc::new(CharacterSduMessage::Backpack)")
+    Debug = "ignore",
+    Default(value = "Rc::new(CharacterSduMessage::Backpack)")
     )]
     on_changed: Rc<dyn Fn(i32) -> CharacterSduMessage>,
 }
 
 impl SduUnlockField {
-    pub fn new<F>(text_margin: usize, sdu_slot: SaveSduSlot, on_changed: F) -> Self
-    where
-        F: 'static + Fn(i32) -> CharacterSduMessage,
+    pub fn new<F>(text_margin: usize, sdu_slot: SaveSduSlot, on_changed: F, vn: String) -> Self
+        where
+            F: 'static + Fn(i32) -> CharacterSduMessage,
     {
         SduUnlockField {
+            view_name: vn,
             name: sdu_slot.to_string(),
             text_margin,
             sdu_slot,
@@ -54,7 +56,7 @@ impl SduUnlockField {
 
         Row::new()
             .push(
-                TextMargin::new(&self.name, self.text_margin)
+                TextMargin::new(&self.view_name, self.text_margin)
                     .0
                     .font(ST_HEI_TI_LIGHT)
                     .size(17)
@@ -76,21 +78,21 @@ impl SduUnlockField {
                             )
                         },
                     )
-                    .0
-                    .width(Length::FillPortion(3))
-                    .font(ST_HEI_TI_LIGHT)
-                    .padding(10)
-                    .size(17)
-                    .style(Bl3UiStyle)
-                    .into_element(),
+                        .0
+                        .width(Length::FillPortion(3))
+                        .font(ST_HEI_TI_LIGHT)
+                        .padding(10)
+                        .size(17)
+                        .style(Bl3UiStyle)
+                        .into_element(),
                     format!("等级必须在 {} 和 {} 之间", minimum, maximum),
                     tooltip::Position::Top,
                 )
-                .gap(10)
-                .padding(10)
-                .font(ST_HEI_TI_LIGHT)
-                .size(17)
-                .style(Bl3UiTooltipStyle),
+                    .gap(10)
+                    .padding(10)
+                    .font(ST_HEI_TI_LIGHT)
+                    .size(17)
+                    .style(Bl3UiTooltipStyle),
             )
             .width(Length::Fill)
             .align_items(Alignment::Center)
@@ -113,18 +115,19 @@ pub struct SduUnlocker {
 impl std::default::Default for SduUnlocker {
     fn default() -> Self {
         Self {
-            backpack: SduUnlockField::new(0, SaveSduSlot::Backpack, CharacterSduMessage::Backpack),
-            sniper: SduUnlockField::new(4, SaveSduSlot::Sniper, CharacterSduMessage::Sniper),
-            heavy: SduUnlockField::new(0, SaveSduSlot::Heavy, CharacterSduMessage::Heavy),
-            shotgun: SduUnlockField::new(4, SaveSduSlot::Shotgun, CharacterSduMessage::Shotgun),
-            grenade: SduUnlockField::new(0, SaveSduSlot::Grenade, CharacterSduMessage::Grenade),
-            smg: SduUnlockField::new(4, SaveSduSlot::Smg, CharacterSduMessage::Smg),
+            backpack: SduUnlockField::new(0, SaveSduSlot::Backpack, CharacterSduMessage::Backpack, String::from("背包")),
+            sniper: SduUnlockField::new(4, SaveSduSlot::Sniper, CharacterSduMessage::Sniper, String::from("狙击枪")),
+            heavy: SduUnlockField::new(0, SaveSduSlot::Heavy, CharacterSduMessage::Heavy, String::from("Heavy")),
+            shotgun: SduUnlockField::new(4, SaveSduSlot::Shotgun, CharacterSduMessage::Shotgun, String::from("霰弹枪")),
+            grenade: SduUnlockField::new(0, SaveSduSlot::Grenade, CharacterSduMessage::Grenade, String::from("手榴弹")),
+            smg: SduUnlockField::new(4, SaveSduSlot::Smg, CharacterSduMessage::Smg, String::from("smg")),
             assault_rifle: SduUnlockField::new(
                 0,
                 SaveSduSlot::Ar,
                 CharacterSduMessage::AssaultRifle,
+                String::from("步枪"),
             ),
-            pistol: SduUnlockField::new(4, SaveSduSlot::Pistol, CharacterSduMessage::Pistol),
+            pistol: SduUnlockField::new(4, SaveSduSlot::Pistol, CharacterSduMessage::Pistol, String::from("手枪")),
             unlock_all_button_state: button::State::default(),
         }
     }
@@ -136,15 +139,15 @@ impl SduUnlocker {
             Column::new()
                 .push(
                     Container::new(
-                        Text::new("SDU Management")
+                        Text::new("弹药升级管理")
                             .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )
-                    .padding(10)
-                    .align_x(Horizontal::Center)
-                    .width(Length::Fill)
-                    .style(Bl3UiStyle),
+                        .padding(10)
+                        .align_x(Horizontal::Center)
+                        .width(Length::Fill)
+                        .style(Bl3UiStyle),
                 )
                 .push(
                     Container::new(
@@ -165,26 +168,26 @@ impl SduUnlocker {
                                 Container::new(
                                     Button::new(
                                         &mut self.unlock_all_button_state,
-                                        Text::new("Max All SDU Levels")
+                                        Text::new("将所有升级置为最高")
                                             .font(ST_HEI_TI_LIGHT)
                                             .size(17),
                                     )
-                                    .on_press(InteractionMessage::ManageSaveInteraction(
-                                        ManageSaveInteractionMessage::Character(
-                                            SaveCharacterInteractionMessage::MaxSduSlotsPressed,
-                                        ),
-                                    ))
-                                    .padding(10)
-                                    .style(Bl3UiStyle)
-                                    .into_element(),
+                                        .on_press(InteractionMessage::ManageSaveInteraction(
+                                            ManageSaveInteractionMessage::Character(
+                                                SaveCharacterInteractionMessage::MaxSduSlotsPressed,
+                                            ),
+                                        ))
+                                        .padding(10)
+                                        .style(Bl3UiStyle)
+                                        .into_element(),
                                 )
-                                .padding(5),
+                                    .padding(5),
                             )
                             .align_items(Alignment::Center)
                             .spacing(15),
                     )
-                    .padding(20)
-                    .style(Bl3UiStyle),
+                        .padding(20)
+                        .style(Bl3UiStyle),
                 ),
         )
     }

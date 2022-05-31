@@ -121,7 +121,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
             Length::Units(75),
             TextInputLimited::new(
                 &mut character_state.name_input_state,
-                "FL4K， 赞恩",
+                "FL4K，赞恩，阿玛拉，莫泽",
                 &character_state.name_input,
                 500,
                 |c| {

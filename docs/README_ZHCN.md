@@ -1,6 +1,7 @@
 # Borderlands 3 Save Editor
 
-[源仓库](https://github.com/ZakisM/bl3_save_edit)
+[源仓库  https://github.com/ZakisM/bl3_save_edit](https://github.com/ZakisM/bl3_save_edit)
+
 [English](../README.md)
 
 一个帮助你修改《无助之地 3》的存档和配置的工具。
@@ -11,7 +12,7 @@
 
 # 截图
 
-<img width="1762" alt="Screenshot 2021-10-13 at 16 03 15" src="https://user-images.githubusercontent.com/8143258/137160314-81ff5ba1-b89c-4c9c-a7e8-ae905a101fe9.png">
+![无主之地 3 存档编辑器](./Snipaste_2022-05-31_20-32-03.png)
 
 # 使用？
 

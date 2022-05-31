@@ -74,26 +74,26 @@ pub struct GearUnlocker {
 impl std::default::Default for GearUnlocker {
     fn default() -> Self {
         Self {
-            grenade: GearUnlockCheckbox::new("Grenade", CharacterGearUnlockedMessage::Grenade),
-            shield: GearUnlockCheckbox::new("Shield", CharacterGearUnlockedMessage::Shield),
+            grenade: GearUnlockCheckbox::new("手榴弹", CharacterGearUnlockedMessage::Grenade),
+            shield: GearUnlockCheckbox::new("盾牌", CharacterGearUnlockedMessage::Shield),
             weapon_1: GearUnlockCheckbox::new(
-                "Weapon Slot 1",
+                "武器槽 1",
                 CharacterGearUnlockedMessage::Weapon1,
             ),
             weapon_2: GearUnlockCheckbox::new(
-                "Weapon Slot 2",
+                "武器槽 2",
                 CharacterGearUnlockedMessage::Weapon2,
             ),
             weapon_3: GearUnlockCheckbox::new(
-                "Weapon Slot 3",
+                "武器槽 3",
                 CharacterGearUnlockedMessage::Weapon3,
             ),
             weapon_4: GearUnlockCheckbox::new(
-                "Weapon Slot 4",
+                "武器槽 4",
                 CharacterGearUnlockedMessage::Weapon4,
             ),
-            artifact: GearUnlockCheckbox::new("Artifact", CharacterGearUnlockedMessage::Artifact),
-            class_mod: GearUnlockCheckbox::new("Class Mod", CharacterGearUnlockedMessage::ClassMod),
+            artifact: GearUnlockCheckbox::new("神器", CharacterGearUnlockedMessage::Artifact),
+            class_mod: GearUnlockCheckbox::new("模组", CharacterGearUnlockedMessage::ClassMod),
         }
     }
 }
@@ -104,7 +104,7 @@ impl GearUnlocker {
             Column::new()
                 .push(
                     Container::new(
-                        Text::new("Gear Management")
+                        Text::new("背包管理")
                             .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),

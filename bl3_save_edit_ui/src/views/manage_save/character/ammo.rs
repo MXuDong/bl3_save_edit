@@ -23,22 +23,24 @@ use crate::widgets::text_margin::TextMargin;
 pub struct AmmoSetterField {
     name: String,
     text_margin: usize,
+    view_name: String,
     pub ammo_pool: AmmoPool,
     pub input: i32,
     input_state: text_input::State,
     #[derivative(
-        Debug = "ignore",
-        Default(value = "Rc::new(CharacterAmmoMessage::Grenade)")
+    Debug = "ignore",
+    Default(value = "Rc::new(CharacterAmmoMessage::Grenade)")
     )]
     on_changed: Rc<dyn Fn(i32) -> CharacterAmmoMessage>,
 }
 
 impl AmmoSetterField {
-    pub fn new<F>(text_margin: usize, ammo_pool: AmmoPool, on_changed: F) -> Self
-    where
-        F: 'static + Fn(i32) -> CharacterAmmoMessage,
+    pub fn new<F>(text_margin: usize, ammo_pool: AmmoPool, on_changed: F, vn: String) -> Self
+        where
+            F: 'static + Fn(i32) -> CharacterAmmoMessage,
     {
         AmmoSetterField {
+            view_name: vn,
             name: ammo_pool.to_string(),
             text_margin,
             ammo_pool,
@@ -54,7 +56,7 @@ impl AmmoSetterField {
 
         Row::new()
             .push(
-                TextMargin::new(&self.name, self.text_margin)
+                TextMargin::new(&self.view_name, self.text_margin)
                     .0
                     .font(ST_HEI_TI_LIGHT)
                     .size(17)
@@ -76,21 +78,21 @@ impl AmmoSetterField {
                             )
                         },
                     )
-                    .0
-                    .width(Length::FillPortion(3))
-                    .font(ST_HEI_TI_LIGHT)
-                    .padding(10)
-                    .size(17)
-                    .style(Bl3UiStyle)
-                    .into_element(),
-                    format!("弹药数需要在 {} 和 {} 之间", minimum, maximum),
+                        .0
+                        .width(Length::FillPortion(3))
+                        .font(ST_HEI_TI_LIGHT)
+                        .padding(10)
+                        .size(17)
+                        .style(Bl3UiStyle)
+                        .into_element(),
+                    format!("弹药数必需在 {} 和 {} 之间", minimum, maximum),
                     tooltip::Position::Top,
                 )
-                .gap(10)
-                .padding(10)
-                .font(ST_HEI_TI_LIGHT)
-                .size(17)
-                .style(Bl3UiTooltipStyle),
+                    .gap(10)
+                    .padding(10)
+                    .font(ST_HEI_TI_LIGHT)
+                    .size(17)
+                    .style(Bl3UiTooltipStyle),
             )
             .width(Length::Fill)
             .align_items(Alignment::Center)
@@ -112,17 +114,18 @@ pub struct AmmoSetter {
 impl std::default::Default for AmmoSetter {
     fn default() -> Self {
         Self {
-            sniper: AmmoSetterField::new(0, AmmoPool::Sniper, CharacterAmmoMessage::Sniper),
-            heavy: AmmoSetterField::new(4, AmmoPool::Heavy, CharacterAmmoMessage::Heavy),
-            shotgun: AmmoSetterField::new(0, AmmoPool::Shotgun, CharacterAmmoMessage::Shotgun),
-            grenade: AmmoSetterField::new(4, AmmoPool::Grenade, CharacterAmmoMessage::Grenade),
-            smg: AmmoSetterField::new(0, AmmoPool::Smg, CharacterAmmoMessage::Smg),
+            sniper: AmmoSetterField::new(0, AmmoPool::Sniper, CharacterAmmoMessage::Sniper, String::from("狙击枪")),
+            heavy: AmmoSetterField::new(4, AmmoPool::Heavy, CharacterAmmoMessage::Heavy, String::from("Heavy")),
+            shotgun: AmmoSetterField::new(0, AmmoPool::Shotgun, CharacterAmmoMessage::Shotgun, String::from("霰弹枪")),
+            grenade: AmmoSetterField::new(4, AmmoPool::Grenade, CharacterAmmoMessage::Grenade, String::from("手榴弹")),
+            smg: AmmoSetterField::new(0, AmmoPool::Smg, CharacterAmmoMessage::Smg, String::from("Smg")),
             assault_rifle: AmmoSetterField::new(
                 4,
                 AmmoPool::Ar,
                 CharacterAmmoMessage::AssaultRifle,
+                String::from("步枪"),
             ),
-            pistol: AmmoSetterField::new(0, AmmoPool::Pistol, CharacterAmmoMessage::Pistol),
+            pistol: AmmoSetterField::new(0, AmmoPool::Pistol, CharacterAmmoMessage::Pistol, String::from("手枪")),
             max_all_button_state: button::State::default(),
         }
     }
@@ -139,10 +142,10 @@ impl AmmoSetter {
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )
-                    .padding(10)
-                    .align_x(Horizontal::Center)
-                    .width(Length::Fill)
-                    .style(Bl3UiStyle),
+                        .padding(10)
+                        .align_x(Horizontal::Center)
+                        .width(Length::Fill)
+                        .style(Bl3UiStyle),
                 )
                 .push(
                     Container::new(
@@ -171,22 +174,22 @@ impl AmmoSetter {
                                             .font(ST_HEI_TI_LIGHT)
                                             .size(17),
                                     )
-                                    .on_press(InteractionMessage::ManageSaveInteraction(
-                                        ManageSaveInteractionMessage::Character(
-                                            SaveCharacterInteractionMessage::MaxAmmoAmountsPressed,
-                                        ),
-                                    ))
-                                    .padding(10)
-                                    .style(Bl3UiStyle)
-                                    .into_element(),
+                                        .on_press(InteractionMessage::ManageSaveInteraction(
+                                            ManageSaveInteractionMessage::Character(
+                                                SaveCharacterInteractionMessage::MaxAmmoAmountsPressed,
+                                            ),
+                                        ))
+                                        .padding(10)
+                                        .style(Bl3UiStyle)
+                                        .into_element(),
                                 )
-                                .padding(5),
+                                    .padding(5),
                             )
                             .align_items(Alignment::Center)
                             .spacing(15),
                     )
-                    .padding(20)
-                    .style(Bl3UiStyle),
+                        .padding(20)
+                        .style(Bl3UiStyle),
                 ),
         )
     }
