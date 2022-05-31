@@ -15,7 +15,7 @@ use bl3_save_edit_core::resources::{ResourceCategorizedParts, ResourcePart, Reso
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiStyleNoBorder, Bl3UiTooltipStyle};
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::item_editor::extra_part_info::add_extra_part_info;
 use crate::views::item_editor::item_button_style::ItemEditorButtonStyle;
 use crate::views::item_editor::parts::filter_parts;
@@ -99,7 +99,7 @@ impl CurrentItemEditorPart {
                         .as_ref()
                         .unwrap_or(&self.part.part.ident),
                 )
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .size(16),
             )
             .spacing(10);
@@ -240,7 +240,7 @@ impl CurrentParts {
                             )
                         })
                         .size(17)
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .text_color(Color::from_rgb8(220, 220, 220))
                         .text_size(17)
                         .width(Length::Fill)
@@ -251,7 +251,7 @@ impl CurrentParts {
                     )
                     .gap(10)
                     .padding(10)
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .style(Bl3UiTooltipStyle);
 
@@ -262,7 +262,7 @@ impl CurrentParts {
                         let reorder_move_up_button = Button::new(
                             &mut self.reorder_parts_move_up_button_state,
                             Text::new("Up")
-                                .font(JETBRAINS_MONO_BOLD)
+                                .font(ST_HEI_TI_LIGHT)
                                 .size(17)
                                 .horizontal_alignment(Horizontal::Center),
                         )
@@ -277,7 +277,7 @@ impl CurrentParts {
                         let reorder_move_down_button = Button::new(
                             &mut self.reorder_parts_move_down_button_state,
                             Text::new("Down")
-                                .font(JETBRAINS_MONO_BOLD)
+                                .font(ST_HEI_TI_LIGHT)
                                 .size(17)
                                 .horizontal_alignment(Horizontal::Center),
                         )
@@ -292,7 +292,7 @@ impl CurrentParts {
                         let reorder_move_top_button = Button::new(
                             &mut self.reorder_parts_move_top_button_state,
                             Text::new("Top")
-                                .font(JETBRAINS_MONO_BOLD)
+                                .font(ST_HEI_TI_LIGHT)
                                 .size(17)
                                 .horizontal_alignment(Horizontal::Center),
                         )
@@ -307,7 +307,7 @@ impl CurrentParts {
                         let reorder_move_bottom_button = Button::new(
                             &mut self.reorder_parts_move_bottom_button_state,
                             Text::new("Bottom")
-                                .font(JETBRAINS_MONO_BOLD)
+                                .font(ST_HEI_TI_LIGHT)
                                 .size(17)
                                 .horizontal_alignment(Horizontal::Center),
                         )
@@ -369,7 +369,7 @@ impl CurrentParts {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)
@@ -391,7 +391,7 @@ impl CurrentParts {
                                 curr = curr.push(
                                     Container::new(
                                         Text::new(&cat_parts.category)
-                                            .font(JETBRAINS_MONO_BOLD)
+                                            .font(ST_HEI_TI_LIGHT)
                                             .size(17)
                                             .color(Color::from_rgb8(242, 203, 5)),
                                     )
@@ -627,7 +627,7 @@ fn part_contains(short_ident: Option<&String>, ident: &str, cat_part_name: &str)
 fn no_parts_message<'a>(message: &str) -> Container<'a, Bl3Message> {
     Container::new(
         Text::new(message)
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .size(17)
             .color(Color::from_rgb8(220, 220, 220)),
     )

@@ -4,7 +4,7 @@ use iced::alignment::Horizontal;
 use iced::{button, Button, Color, Element, Length, Text};
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
-use crate::resources::fonts::JETBRAINS_MONO_BOLD;
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::InteractionExt;
 
 pub fn tab_bar_button<'a, T>(
@@ -14,8 +14,8 @@ pub fn tab_bar_button<'a, T>(
     on_press_message: InteractionMessage,
     extra_title_content: Option<String>,
 ) -> Element<'a, Bl3Message>
-where
-    T: Display + PartialEq,
+    where
+        T: Display + PartialEq,
 {
     let title = if let Some(extra_content) = extra_title_content {
         format!("{} {}", tab_bar_view, extra_content)
@@ -26,16 +26,16 @@ where
     let button = Button::new(
         state,
         Text::new(title)
-            .font(JETBRAINS_MONO_BOLD)
+            .font(ST_HEI_TI_LIGHT)
             .size(17)
             .color(Color::from_rgb8(242, 203, 5))
             .width(Length::Fill)
             .horizontal_alignment(Horizontal::Center),
     )
-    .on_press(on_press_message)
-    .width(Length::Fill)
-    .padding(15)
-    .style(TabBarButtonActiveStyle);
+        .on_press(on_press_message)
+        .width(Length::Fill)
+        .padding(15)
+        .style(TabBarButtonActiveStyle);
 
     if tab_bar_view == *current_tab_bar_type {
         button.style(TabBarButtonActiveStyle).into_element()

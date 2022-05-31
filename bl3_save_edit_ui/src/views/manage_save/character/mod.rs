@@ -9,7 +9,7 @@ use bl3_save_edit_core::game_data::GameDataKv;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiTooltipStyle};
-use crate::resources::fonts::JETBRAINS_MONO;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::manage_save::character::ammo::AmmoSetter;
 use crate::views::manage_save::character::gear::GearUnlocker;
 use crate::views::manage_save::character::sdu::SduUnlocker;
@@ -117,11 +117,11 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
 
     let character_name = Container::new(
         LabelledElement::create(
-            "Name",
+            "名字",
             Length::Units(75),
             TextInputLimited::new(
                 &mut character_state.name_input_state,
-                "FL4K",
+                "FL4K， 赞恩",
                 &character_state.name_input,
                 500,
                 |c| {
@@ -133,7 +133,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)
@@ -147,7 +147,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
 
     let player_class = Container::new(
         LabelledElement::create(
-            "Class",
+            "职业",
             Length::Units(65),
             PickList::new(
                 &mut character_state.player_class_selector,
@@ -161,7 +161,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
                     )
                 },
             )
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .text_size(17)
             .width(Length::Fill)
             .padding(10)
@@ -181,7 +181,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
 
     let level = Container::new(
         LabelledElement::create(
-            "Level",
+            "等级",
             Length::Units(60),
             Tooltip::new(
                 NumberInput::new(
@@ -198,17 +198,17 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
                     },
                 )
                 .0
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .padding(10)
                 .size(17)
                 .style(Bl3UiStyle)
                 .into_element(),
-                format!("Level must be between 1 and {}", MAX_CHARACTER_LEVEL),
+                format!("等级必须在 1 到 {} 之间", MAX_CHARACTER_LEVEL),
                 tooltip::Position::Top,
             )
             .gap(10)
             .padding(10)
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .size(17)
             .style(Bl3UiTooltipStyle),
         )
@@ -221,7 +221,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
 
     let experience_points = Container::new(
         LabelledElement::create(
-            "Experience",
+            "经验值",
             Length::Units(95),
             Tooltip::new(
                 NumberInput::new(
@@ -238,17 +238,17 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
                     },
                 )
                 .0
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .padding(10)
                 .size(17)
                 .style(Bl3UiStyle)
                 .into_element(),
-                "Experience must be between 0 and 9,520,932",
+                "经验值必须在 0 到 9,520,932 之间",
                 tooltip::Position::Top,
             )
             .gap(10)
             .padding(10)
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .size(17)
             .style(Bl3UiTooltipStyle),
         )
@@ -261,7 +261,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
 
     let ability_points = Container::new(
         LabelledElement::create(
-            "Skill Points",
+            "技能点",
             Length::Units(130),
             NumberInput::new(
                 &mut character_state.ability_points_input_state,
@@ -277,7 +277,7 @@ pub fn view(character_state: &mut CharacterState) -> Container<Bl3Message> {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)

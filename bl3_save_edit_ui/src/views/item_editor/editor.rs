@@ -13,7 +13,7 @@ use bl3_save_edit_core::resources::{
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiTooltipStyle};
-use crate::resources::fonts::JETBRAINS_MONO;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::item_editor::parts::available_parts::AvailableParts;
 use crate::views::item_editor::parts::current_parts::CurrentParts;
 use crate::views::item_editor::ItemEditorInteractionMessage;
@@ -87,7 +87,7 @@ impl Editor {
                             },
                         )
                         .0
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .padding(10)
                         .size(17)
                         .style(Bl3UiStyle)
@@ -97,7 +97,7 @@ impl Editor {
                     )
                     .gap(10)
                     .padding(10)
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .style(Bl3UiTooltipStyle),
                 )
@@ -125,7 +125,7 @@ impl Editor {
                             &self.serial_input,
                             |_| InteractionMessage::Ignore,
                         )
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .padding(10)
                         .size(17)
                         .style(Bl3UiStyle)
@@ -228,7 +228,7 @@ impl Editor {
                             },
                         )
                         .options_empty_message(NO_SEARCH_RESULTS_FOUND_MESSAGE.to_owned())
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .padding(10)
                         .style(Bl3UiStyle)
@@ -267,7 +267,7 @@ impl Editor {
                             },
                         )
                         .options_empty_message(NO_SEARCH_RESULTS_FOUND_MESSAGE.to_owned())
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .padding(10)
                         .style(Bl3UiStyle)
@@ -306,7 +306,7 @@ impl Editor {
                             },
                         )
                         .options_empty_message(NO_SEARCH_RESULTS_FOUND_MESSAGE.to_owned())
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .padding(10)
                         .style(Bl3UiStyle)

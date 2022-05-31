@@ -4,7 +4,7 @@ use iced::{container, svg, Color, Column, Container, Length, Row, Svg, Text};
 use bl3_save_edit_core::bl3_item::{Bl3Item, ItemFlags, ItemRarity, ItemType};
 
 use crate::bl3_ui::InteractionMessage;
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::resources::svgs::{FAVORITE, JUNK};
 
 pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
@@ -21,7 +21,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
         .push(
             Container::new(
                 Text::new(format!("Level {}", item.level()))
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(15),
             )
             .padding(5)
@@ -36,7 +36,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
         }
 
         tags_row = tags_row.push(
-            Container::new(Text::new(manufacturer_short).font(JETBRAINS_MONO).size(15))
+            Container::new(Text::new(manufacturer_short).font(ST_HEI_TI_LIGHT).size(15))
                 .padding(5)
                 .style(ItemInfoStyle),
         )
@@ -48,7 +48,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
                 tags_row = tags_row.push(
                     Container::new(
                         Text::new(weapon_type.to_string())
-                            .font(JETBRAINS_MONO)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(15),
                     )
                     .padding(5)
@@ -61,7 +61,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
             tags_row = tags_row.push(
                 Container::new(
                     Text::new(item_parts.rarity.to_string())
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(15),
                 )
                 .padding(5)
@@ -111,7 +111,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
     Column::new()
         .push(
             Text::new(&label)
-                .font(JETBRAINS_MONO_BOLD)
+                .font(ST_HEI_TI_LIGHT)
                 .size(18)
                 .color(Color::from_rgb8(224, 224, 224)),
         )

@@ -8,7 +8,7 @@ use bl3_save_edit_core::bl3_save::inventory_slot::InventorySlot;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::Bl3UiStyle;
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::manage_save::character::{
     CharacterGearUnlockedMessage, SaveCharacterInteractionMessage,
 };
@@ -51,7 +51,7 @@ impl GearUnlockCheckbox {
             ))
         })
         .size(20)
-        .font(JETBRAINS_MONO)
+        .font(ST_HEI_TI_LIGHT)
         .text_color(Color::from_rgb8(220, 220, 220))
         .text_size(17)
         .style(Bl3UiStyle)
@@ -105,7 +105,7 @@ impl GearUnlocker {
                 .push(
                     Container::new(
                         Text::new("Gear Management")
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )

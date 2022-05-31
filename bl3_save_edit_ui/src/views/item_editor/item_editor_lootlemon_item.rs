@@ -5,7 +5,7 @@ use bl3_save_edit_core::bl3_item::Bl3Item;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::Bl3UiStyleCustomNoBorder;
-use crate::resources::fonts::JETBRAINS_MONO_BOLD;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::item_editor::item_button_style::ItemEditorListButtonStyle;
 use crate::views::item_editor::{list_item_contents, ItemEditorInteractionMessage};
 use crate::views::InteractionExt;
@@ -38,7 +38,7 @@ impl ItemEditorLootlemonItem {
                 Button::new(
                     &mut self.import_button_state,
                     Text::new("Import Item")
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
                 )
@@ -53,7 +53,7 @@ impl ItemEditorLootlemonItem {
                 Button::new(
                     &mut self.open_lootlemon_button_state,
                     Text::new("Open on Lootlemon ➜")
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
                 )

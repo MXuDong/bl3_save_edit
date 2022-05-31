@@ -23,7 +23,7 @@ use crate::bl3_ui_style::{
 use crate::commands::{initialization, interaction};
 use crate::config::{Bl3Config, ConfigMessage};
 use crate::resources::fonts::{
-    JETBRAINS_MONO, JETBRAINS_MONO_BOLD, JETBRAINS_MONO_NL_EXTRA_BOLD_ITALIC,
+    ST_HEI_TI_LIGHT,
 };
 use crate::resources::svgs::REFRESH;
 use crate::state_mappers::{manage_profile, manage_save};
@@ -292,34 +292,34 @@ impl Application for Bl3Application {
                         match manage_save_msg {
                             ManageSaveInteractionMessage::TabBar(tab_bar_msg) => {
                                 match tab_bar_msg {
-                                    SaveTabBarInteractionMessage::General => {
+                                    SaveTabBarInteractionMessage::基础 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::General),
+                                            ManageSaveView::TabBar(SaveTabBarView::基础),
                                         )
                                     }
-                                    SaveTabBarInteractionMessage::Character => {
+                                    SaveTabBarInteractionMessage::角色 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::Character),
+                                            ManageSaveView::TabBar(SaveTabBarView::角色),
                                         )
                                     }
-                                    SaveTabBarInteractionMessage::Inventory => {
+                                    SaveTabBarInteractionMessage::背包 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::Inventory),
+                                            ManageSaveView::TabBar(SaveTabBarView::背包),
                                         )
                                     }
-                                    SaveTabBarInteractionMessage::Currency => {
+                                    SaveTabBarInteractionMessage::金钱 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::Currency),
+                                            ManageSaveView::TabBar(SaveTabBarView::金钱),
                                         )
                                     }
-                                    SaveTabBarInteractionMessage::Vehicle => {
+                                    SaveTabBarInteractionMessage::车辆 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::Vehicle),
+                                            ManageSaveView::TabBar(SaveTabBarView::车辆),
                                         )
                                     }
-                                    SaveTabBarInteractionMessage::Settings => {
+                                    SaveTabBarInteractionMessage::设置 => {
                                         self.view_state = ViewState::ManageSave(
-                                            ManageSaveView::TabBar(SaveTabBarView::Settings),
+                                            ManageSaveView::TabBar(SaveTabBarView::设置),
                                         )
                                     }
                                 }
@@ -1560,8 +1560,8 @@ impl Application for Bl3Application {
     }
 
     fn view(&mut self) -> Element<'_, Self::Message> {
-        let title = Text::new("Borderlands 3 Save Editor".to_uppercase())
-            .font(JETBRAINS_MONO_NL_EXTRA_BOLD_ITALIC)
+        let title = Text::new("无主之地 3 存档编辑器".to_uppercase())
+            .font(ST_HEI_TI_LIGHT)
             .size(40)
             .color(Color::from_rgb8(242, 203, 5))
             .width(Length::Fill)
@@ -1579,14 +1579,14 @@ impl Application for Bl3Application {
                 .padding(10)
                 .style(Bl3UiStyle)
                 .into_element(),
-            "Refresh saves folder",
+            "从存档文件夹重新读取数据",
             tooltip::Position::Bottom,
         )
-        .gap(10)
-        .padding(10)
-        .font(JETBRAINS_MONO)
-        .size(17)
-        .style(Bl3UiTooltipStyle);
+            .gap(10)
+            .padding(10)
+            .font(ST_HEI_TI_LIGHT)
+            .size(17)
+            .style(Bl3UiTooltipStyle);
 
         let all_saves_picklist = if !self.is_reloading_saves {
             PickList::new(
@@ -1595,28 +1595,28 @@ impl Application for Bl3Application {
                 Some(*self.loaded_files_selected.clone()),
                 |f| InteractionMessage::LoadedFileSelected(Box::new(f)),
             )
-            .font(JETBRAINS_MONO)
-            .text_size(17)
-            .width(Length::Fill)
-            .padding(10)
-            .style(Bl3UiStyle)
-            .into_element()
+                .font(ST_HEI_TI_LIGHT)
+                .text_size(17)
+                .width(Length::Fill)
+                .padding(10)
+                .style(Bl3UiStyle)
+                .into_element()
         } else {
             Container::new(
-                Text::new("Reloading saves...")
-                    .font(JETBRAINS_MONO)
+                Text::new("重新加载存档...")
+                    .font(ST_HEI_TI_LIGHT)
                     .color(Color::from_rgb8(220, 220, 200))
                     .size(17),
             )
-            .width(Length::Fill)
-            .padding(10)
-            .style(Bl3UiStyle)
-            .into()
+                .width(Length::Fill)
+                .padding(10)
+                .style(Bl3UiStyle)
+                .into()
         };
 
         let view_state_discrim = mem::discriminant(&self.view_state);
         let manage_save_discrim = mem::discriminant(&ViewState::ManageSave(
-            ManageSaveView::TabBar(SaveTabBarView::General),
+            ManageSaveView::TabBar(SaveTabBarView::基础),
         ));
         let manage_profile_discrim = mem::discriminant(&ViewState::ManageProfile(
             ManageProfileView::TabBar(ProfileTabBarView::General),
@@ -1624,10 +1624,10 @@ impl Application for Bl3Application {
 
         let mut save_button = Button::new(
             &mut self.save_file_button_state,
-            Text::new("Save").font(JETBRAINS_MONO_BOLD).size(17),
+            Text::new("写入存档").font(ST_HEI_TI_LIGHT).size(17),
         )
-        .padding(10)
-        .style(Bl3UiStyle);
+            .padding(10)
+            .style(Bl3UiStyle);
 
         if view_state_discrim == manage_save_discrim {
             save_button = save_button.on_press(InteractionMessage::ManageSaveInteraction(
@@ -1663,11 +1663,11 @@ impl Application for Bl3Application {
                         latest_release.tag_name
                     ),
                 })
-                .font(JETBRAINS_MONO_BOLD)
-                .size(17),
+                    .font(ST_HEI_TI_LIGHT)
+                    .size(17),
             )
-            .padding(10)
-            .style(Bl3UiPositiveButtonStyle);
+                .padding(10)
+                .style(Bl3UiPositiveButtonStyle);
 
             if !self.is_updating {
                 update_button = update_button.on_press(Bl3Message::UpdateToLatestRelease);
@@ -1679,8 +1679,8 @@ impl Application for Bl3Application {
                     .spacing(10)
                     .align_items(Alignment::Center),
             )
-            .width(Length::Fill)
-            .align_x(Horizontal::Left);
+                .width(Length::Fill)
+                .align_x(Horizontal::Left);
 
             menu_bar_content = menu_bar_content.push(update_content);
         }

@@ -29,7 +29,7 @@ use parts::current_parts::CurrentPartTypeIndex;
 use crate::bl3_ui::{Bl3Message, InteractionMessage, MessageResult};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiStyleNoBorder, Bl3UiTooltipStyle};
 use crate::commands::interaction;
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::util;
 use crate::util::ErrorExt;
 use crate::views::item_editor::item_editor_list_item::ItemEditorListItem;
@@ -997,7 +997,7 @@ where
                         },
                     )
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
@@ -1007,7 +1007,7 @@ where
                 )
                 .gap(10)
                 .padding(10)
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .size(17)
                 .style(Bl3UiTooltipStyle),
             )
@@ -1018,7 +1018,7 @@ where
         .push(
             Button::new(
                 &mut item_editor_state.import_serial_button_state,
-                Text::new("Import").font(JETBRAINS_MONO_BOLD).size(17),
+                Text::new("Import").font(ST_HEI_TI_LIGHT).size(17),
             )
             .on_press(interaction_message(
                 ItemEditorInteractionMessage::ImportItemFromSerialPressed,
@@ -1032,7 +1032,7 @@ where
     let create_item_button = Container::new(
         Button::new(
             &mut item_editor_state.create_item_button_state,
-            Text::new("Create Item").font(JETBRAINS_MONO_BOLD).size(17),
+            Text::new("Create Item").font(ST_HEI_TI_LIGHT).size(17),
         )
         .on_press(interaction_message(
             ItemEditorInteractionMessage::CreateItemPressed,
@@ -1059,7 +1059,7 @@ where
                             },
                         )
                         .0
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .padding(10)
                         .size(17)
                         .style(Bl3UiStyle)
@@ -1069,7 +1069,7 @@ where
                     )
                     .gap(10)
                     .padding(10)
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .style(Bl3UiTooltipStyle),
                 )
@@ -1080,7 +1080,7 @@ where
             .push(
                 Button::new(
                     &mut item_editor_state.all_item_levels_button_state,
-                    Text::new("Set").font(JETBRAINS_MONO_BOLD).size(17),
+                    Text::new("Set").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(interaction_message(
                     ItemEditorInteractionMessage::SetAllItemLevelsPressed,
@@ -1181,7 +1181,7 @@ where
         .push(
             item_list_search_input
                 .0
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .padding(10)
                 .size(18)
                 .style(Bl3UiStyle)
@@ -1209,7 +1209,7 @@ where
                 curr = curr.push(
                     Container::new(
                         Text::new(format!("{}s", item_type.to_string()))
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(18)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )
@@ -1261,7 +1261,7 @@ where
                     item_list_contents = item_list_contents.push(
                         Container::new(
                             Text::new(NO_SEARCH_RESULTS_FOUND_MESSAGE)
-                                .font(JETBRAINS_MONO_BOLD)
+                                .font(ST_HEI_TI_LIGHT)
                                 .size(17)
                                 .color(Color::from_rgb8(220, 220, 220)),
                         )
@@ -1275,7 +1275,7 @@ where
                 item_list_contents = item_list_contents.push(
                     Container::new(
                         Text::new("Please Import/Create an item to get started.")
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(220, 220, 220)),
                     )
@@ -1309,7 +1309,7 @@ where
                             curr = curr.push(
                                 Container::new(
                                     Text::new(format!("{}s", item_type.to_string()))
-                                        .font(JETBRAINS_MONO_BOLD)
+                                        .font(ST_HEI_TI_LIGHT)
                                         .size(18)
                                         .color(Color::from_rgb8(242, 203, 5)),
                                 )
@@ -1351,7 +1351,7 @@ where
                 item_list_contents = item_list_contents.push(
                     Container::new(
                         Text::new(NO_SEARCH_RESULTS_FOUND_MESSAGE)
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(220, 220, 220)),
                     )

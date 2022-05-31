@@ -7,7 +7,7 @@ use bl3_save_edit_core::parser::HeaderType;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiTooltipStyle};
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::manage_save::ManageSaveInteractionMessage;
 use crate::views::InteractionExt;
 use crate::widgets::labelled_element::LabelledElement;
@@ -40,7 +40,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
         Row::new()
             .push(
                 LabelledElement::create(
-                    "File",
+                    "文件",
                     Length::Units(90),
                     Tooltip::new(
                         TextInput::new(
@@ -49,17 +49,17 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
                             &general_state.filename_input,
                             |_| InteractionMessage::Ignore,
                         )
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .padding(10)
                         .size(17)
                         .style(Bl3UiStyle)
                         .into_element(),
-                        "Not editable, this is modified by changing your Save Slot below",
+                        "不可编辑",
                         tooltip::Position::Top,
                     )
                     .gap(10)
                     .padding(10)
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .style(Bl3UiTooltipStyle),
                 )
@@ -77,7 +77,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
         Row::new()
             .push(
                 LabelledElement::create(
-                    "Save GUID",
+                    "存档唯一随机 ID",
                     Length::Units(90),
                     TextInputLimited::new(
                         &mut general_state.guid_input_state,
@@ -93,7 +93,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
                         },
                     )
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
@@ -106,7 +106,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
             .push(
                 Button::new(
                     &mut general_state.generate_guid_button_state,
-                    Text::new("Random").font(JETBRAINS_MONO_BOLD).size(17),
+                    Text::new("随机").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(InteractionMessage::ManageSaveInteraction(
                     ManageSaveInteractionMessage::General(
@@ -125,7 +125,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
 
     let save_slot = Container::new(
         LabelledElement::create(
-            "Save Slot",
+            "存档槽位",
             Length::Units(90),
             Tooltip::new(
                 NumberInput::new(
@@ -142,17 +142,17 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
                     },
                 )
                 .0
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .padding(10)
                 .size(17)
                 .style(Bl3UiStyle)
                 .into_element(),
-                "Slot must be 1 or greater",
+                "槽位必须大于等于 1",
                 tooltip::Position::Top,
             )
             .gap(10)
             .padding(10)
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .size(17)
             .style(Bl3UiTooltipStyle),
         )
@@ -165,7 +165,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
 
     let save_type = Container::new(
         LabelledElement::create(
-            "Save Type",
+            "存储类型",
             Length::Units(90),
             PickList::new(
                 &mut general_state.save_type_selector,
@@ -179,7 +179,7 @@ pub fn view(general_state: &mut GeneralState) -> Container<Bl3Message> {
                     )
                 },
             )
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .text_size(17)
             .width(Length::Fill)
             .padding(10)

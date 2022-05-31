@@ -37,23 +37,25 @@ pub struct SaveTabBarState {
 
 #[derive(Debug, Clone)]
 pub enum SaveTabBarInteractionMessage {
-    General,
-    Character,
-    Inventory,
-    Currency,
-    Vehicle,
-    Settings,
+    // fixme: 我知道这样写非常蠢，但是真的很快不是吗
+    基础,
+    角色,
+    背包,
+    金钱,
+    车辆,
+    设置,
 }
 
 #[derive(Debug, Display, PartialEq)]
 #[strum(serialize_all = "title_case")]
 pub enum SaveTabBarView {
-    General,
-    Character,
-    Inventory,
-    Currency,
-    Vehicle,
-    Settings,
+    // fixme: 我知道这样写非常蠢，但是真的很快不是吗
+    基础,
+    角色,
+    背包,
+    金钱,
+    车辆,
+    设置,
 }
 
 pub fn view<'a>(
@@ -66,10 +68,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .general_button_state,
-        SaveTabBarView::General,
+        SaveTabBarView::基础,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::General,
+            SaveTabBarInteractionMessage::基础,
         )),
         svg::Handle::from_memory(GENERAL),
         100,
@@ -80,10 +82,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .character_button_state,
-        SaveTabBarView::Character,
+        SaveTabBarView::角色,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::Character,
+            SaveTabBarInteractionMessage::角色,
         )),
         svg::Handle::from_memory(CHARACTER),
         115,
@@ -94,10 +96,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .inventory_button_state,
-        SaveTabBarView::Inventory,
+        SaveTabBarView::背包,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::Inventory,
+            SaveTabBarInteractionMessage::背包,
         )),
         svg::Handle::from_memory(INVENTORY),
         115,
@@ -108,10 +110,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .currency_button_state,
-        SaveTabBarView::Currency,
+        SaveTabBarView::金钱,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::Currency,
+            SaveTabBarInteractionMessage::金钱,
         )),
         svg::Handle::from_memory(CURRENCY),
         105,
@@ -122,10 +124,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .vehicle_button_state,
-        SaveTabBarView::Vehicle,
+        SaveTabBarView::车辆,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::Vehicle,
+            SaveTabBarInteractionMessage::车辆,
         )),
         svg::Handle::from_memory(VEHICLE),
         100,
@@ -136,10 +138,10 @@ pub fn view<'a>(
             .save_view_state
             .tab_bar_state
             .settings_button_state,
-        SaveTabBarView::Settings,
+        SaveTabBarView::设置,
         tab_bar_view,
         InteractionMessage::ManageSaveInteraction(ManageSaveInteractionMessage::TabBar(
-            SaveTabBarInteractionMessage::Settings,
+            SaveTabBarInteractionMessage::设置,
         )),
         svg::Handle::from_memory(SETTINGS),
         105,
@@ -158,22 +160,22 @@ pub fn view<'a>(
     .style(ManageTabBarStyle);
 
     let tab_content = match tab_bar_view {
-        SaveTabBarView::General => {
+        SaveTabBarView::基础 => {
             general::view(&mut manage_save_state.save_view_state.general_state)
         }
-        SaveTabBarView::Character => {
+        SaveTabBarView::角色 => {
             character::view(&mut manage_save_state.save_view_state.character_state)
         }
-        SaveTabBarView::Inventory => {
+        SaveTabBarView::背包 => {
             inventory::view(&mut manage_save_state.save_view_state.inventory_state)
         }
-        SaveTabBarView::Currency => {
+        SaveTabBarView::金钱 => {
             currency::view(&mut manage_save_state.save_view_state.currency_state)
         }
-        SaveTabBarView::Vehicle => {
+        SaveTabBarView::车辆 => {
             vehicle::view(&mut manage_save_state.save_view_state.vehicle_state)
         }
-        SaveTabBarView::Settings => views::settings::view(settings_state),
+        SaveTabBarView::设置 => views::settings::view(settings_state),
     };
 
     let all_contents = Column::new().push(tab_bar).push(tab_content);

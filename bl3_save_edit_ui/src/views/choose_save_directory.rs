@@ -7,7 +7,7 @@ use bl3_save_edit_core::file_helper::Bl3FileType;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage, MessageResult};
 use crate::bl3_ui_style::Bl3UiStyle;
-use crate::resources::fonts::JETBRAINS_MONO;
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::InteractionExt;
 
 #[derive(Debug, Default)]
@@ -28,20 +28,20 @@ pub enum ChooseSaveInteractionMessage {
 }
 
 pub fn view(choose_save_directory_state: &mut ChooseSaveDirectoryState) -> Container<Bl3Message> {
-    let dir_button_text = Text::new("Select Borderlands 3 Save/Profile folder")
-        .font(JETBRAINS_MONO)
+    let dir_button_text = Text::new("选择《无主之地 3》的存档/配置文件夹：")
+        .font(ST_HEI_TI_LIGHT)
         .size(20)
         .color(Color::from_rgb8(220, 220, 220));
 
     let mut dir_button = Button::new(
         &mut choose_save_directory_state.choose_dir_button_state,
-        Text::new("Select...")
+        Text::new("本机目录...")
             .horizontal_alignment(Horizontal::Center)
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .size(18),
     )
-    .padding(10)
-    .style(Bl3UiStyle);
+        .padding(10)
+        .style(Bl3UiStyle);
 
     if !choose_save_directory_state.choose_dir_window_open {
         dir_button = dir_button.on_press(InteractionMessage::ChooseSaveInteraction(

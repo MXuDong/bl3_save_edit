@@ -11,7 +11,7 @@ use bl3_save_edit_core::resources::{ResourceCategorizedParts, ResourcePart};
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiStyleNoBorder};
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::item_editor::extra_part_info::add_extra_part_info;
 use crate::views::item_editor::item_button_style::ItemEditorButtonStyle;
 use crate::views::item_editor::parts::filter_parts;
@@ -99,7 +99,7 @@ impl AvailableResourcePart {
         F: Fn(ItemEditorInteractionMessage) -> InteractionMessage + 'static + Copy,
     {
         let part_contents_col = Column::new()
-            .push(Text::new(&self.part.name).font(JETBRAINS_MONO).size(16))
+            .push(Text::new(&self.part.name).font(ST_HEI_TI_LIGHT).size(16))
             .spacing(10);
 
         let part_contents_col = add_extra_part_info(part_contents_col, &self.part.info);
@@ -207,7 +207,7 @@ impl AvailableParts {
                             )
                         })
                         .size(17)
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .text_color(Color::from_rgb8(220, 220, 220))
                         .text_size(17)
                         .style(Bl3UiStyle)
@@ -264,7 +264,7 @@ impl AvailableParts {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)
@@ -296,7 +296,7 @@ impl AvailableParts {
                             curr = curr.push(
                                 Container::new(
                                     Text::new(category_name.unwrap_or(&cat_parts.category))
-                                        .font(JETBRAINS_MONO_BOLD)
+                                        .font(ST_HEI_TI_LIGHT)
                                         .size(17)
                                         .color(Color::from_rgb8(242, 203, 5)),
                                 )
@@ -333,7 +333,7 @@ impl AvailableParts {
                 available_parts_column = available_parts_column.push(
                     Container::new(
                         Text::new(NO_SEARCH_RESULTS_FOUND_MESSAGE)
-                            .font(JETBRAINS_MONO)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(220, 220, 220)),
                     )
@@ -347,7 +347,7 @@ impl AvailableParts {
             available_parts_column = available_parts_column.push(
                 Container::new(
                     Text::new("No available parts or anointments found.")
-                        .font(JETBRAINS_MONO)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(17)
                         .color(Color::from_rgb8(220, 220, 220)),
                 )

@@ -4,7 +4,7 @@ use bl3_save_edit_core::bl3_profile::science_levels::BorderlandsScienceLevel;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::Bl3UiStyle;
-use crate::resources::fonts::JETBRAINS_MONO;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::manage_profile::profile::guardian_rewards::GuardianRewardUnlocker;
 use crate::views::manage_profile::profile::sdu::SduUnlocker;
 use crate::views::manage_profile::profile::skin_unlocker::SkinUnlocker;
@@ -100,7 +100,7 @@ pub fn view(profile_state: &mut ProfileState) -> Container<Bl3Message> {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)
@@ -129,7 +129,7 @@ pub fn view(profile_state: &mut ProfileState) -> Container<Bl3Message> {
                     )
                 },
             )
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .text_size(17)
             .width(Length::Fill)
             .padding(10)
@@ -161,7 +161,7 @@ pub fn view(profile_state: &mut ProfileState) -> Container<Bl3Message> {
                 },
             )
             .0
-            .font(JETBRAINS_MONO)
+            .font(ST_HEI_TI_LIGHT)
             .padding(10)
             .size(17)
             .style(Bl3UiStyle)

@@ -36,11 +36,11 @@ pub fn map_loaded_file_to_state(main_state: &mut Bl3Application) -> Result<()> {
 
             if mem::discriminant(&main_state.view_state)
                 != mem::discriminant(&ViewState::ManageSave(ManageSaveView::TabBar(
-                    SaveTabBarView::General,
+                SaveTabBarView::基础,
                 )))
             {
                 main_state.view_state =
-                    ViewState::ManageSave(ManageSaveView::TabBar(SaveTabBarView::General));
+                    ViewState::ManageSave(ManageSaveView::TabBar(SaveTabBarView::基础));
             }
         }
         Bl3FileType::PcProfile(profile) | Bl3FileType::Ps4Profile(profile) => {

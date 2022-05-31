@@ -11,7 +11,7 @@ use bl3_save_edit_core::bl3_save::sdu::SaveSduSlot;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiTooltipStyle};
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::manage_save::character::{CharacterSduMessage, SaveCharacterInteractionMessage};
 use crate::views::manage_save::ManageSaveInteractionMessage;
 use crate::views::InteractionExt;
@@ -56,7 +56,7 @@ impl SduUnlockField {
             .push(
                 TextMargin::new(&self.name, self.text_margin)
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .color(Color::from_rgb8(220, 220, 220))
                     .width(Length::FillPortion(8)),
@@ -78,17 +78,17 @@ impl SduUnlockField {
                     )
                     .0
                     .width(Length::FillPortion(3))
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
                     .into_element(),
-                    format!("Level must be between {} and {}", minimum, maximum),
+                    format!("等级必须在 {} 和 {} 之间", minimum, maximum),
                     tooltip::Position::Top,
                 )
                 .gap(10)
                 .padding(10)
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .size(17)
                 .style(Bl3UiTooltipStyle),
             )
@@ -137,7 +137,7 @@ impl SduUnlocker {
                 .push(
                     Container::new(
                         Text::new("SDU Management")
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )
@@ -166,7 +166,7 @@ impl SduUnlocker {
                                     Button::new(
                                         &mut self.unlock_all_button_state,
                                         Text::new("Max All SDU Levels")
-                                            .font(JETBRAINS_MONO_BOLD)
+                                            .font(ST_HEI_TI_LIGHT)
                                             .size(17),
                                     )
                                     .on_press(InteractionMessage::ManageSaveInteraction(

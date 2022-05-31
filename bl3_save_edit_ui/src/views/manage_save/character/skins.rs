@@ -12,7 +12,7 @@ use bl3_save_edit_core::game_data::{
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::Bl3UiStyle;
-use crate::resources::fonts::JETBRAINS_MONO;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::manage_save::character::{
     CharacterSkinSelectedMessage, SaveCharacterInteractionMessage,
 };
@@ -102,7 +102,7 @@ impl SkinPickList {
                         )
                     },
                 )
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .text_size(17)
                 .width(Length::Fill)
                 .padding(10)
@@ -128,21 +128,21 @@ impl std::default::Default for SkinSelectors {
     fn default() -> Self {
         Self {
             head_skin: SkinPickList::new(
-                "Head Skin",
+                "头部皮肤",
                 105,
                 &PROFILE_HEADS_DEFAULTS,
                 &PROFILE_HEADS,
                 CharacterSkinSelectedMessage::HeadSkin,
             ),
             character_skin: SkinPickList::new(
-                "Character Skin",
+                "角色皮肤",
                 135,
                 &PROFILE_SKINS_DEFAULTS,
                 &PROFILE_SKINS,
                 CharacterSkinSelectedMessage::CharacterSkin,
             ),
             echo_theme: SkinPickList::new(
-                "ECHO Theme",
+                "ECHO 主题",
                 105,
                 &PROFILE_ECHO_THEMES_DEFAULTS,
                 &PROFILE_ECHO_THEMES,

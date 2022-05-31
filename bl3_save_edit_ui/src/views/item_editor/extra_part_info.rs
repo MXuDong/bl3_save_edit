@@ -3,7 +3,7 @@ use iced::{container, Color, Column};
 use bl3_save_edit_core::resources::ResourcePartInfo;
 
 use crate::bl3_ui::InteractionMessage;
-use crate::resources::fonts::JETBRAINS_MONO_LIGHT_ITALIC;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::widgets::text_margin::TextMargin;
 
 pub fn add_extra_part_info<'a>(
@@ -16,7 +16,7 @@ pub fn add_extra_part_info<'a>(
         part_contents_col = part_contents_col.push(
             TextMargin::new(effects, 1)
                 .0
-                .font(JETBRAINS_MONO_LIGHT_ITALIC)
+                .font(ST_HEI_TI_LIGHT)
                 .color(Color::from_rgb8(180, 180, 180))
                 .size(16),
         );
@@ -42,7 +42,7 @@ pub fn add_extra_part_info<'a>(
         part_contents_col = part_contents_col.push(
             TextMargin::new(positives_negatives, 1)
                 .0
-                .font(JETBRAINS_MONO_LIGHT_ITALIC)
+                .font(ST_HEI_TI_LIGHT)
                 .color(Color::from_rgb8(180, 180, 180))
                 .size(16),
         );

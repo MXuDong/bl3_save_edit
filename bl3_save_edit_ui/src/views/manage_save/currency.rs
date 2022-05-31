@@ -2,7 +2,7 @@ use iced::{button, text_input, Alignment, Button, Column, Container, Length, Row
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::Bl3UiStyle;
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::manage_save::ManageSaveInteractionMessage;
 use crate::views::InteractionExt;
 use crate::widgets::labelled_element::LabelledElement;
@@ -47,7 +47,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
                         },
                     )
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
@@ -60,7 +60,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
             .push(
                 Button::new(
                     &mut currency_state.max_money_button_state,
-                    Text::new("Max").font(JETBRAINS_MONO_BOLD).size(17),
+                    Text::new("Max").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(InteractionMessage::ManageSaveInteraction(
                     ManageSaveInteractionMessage::Currency(
@@ -97,7 +97,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
                         },
                     )
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
@@ -110,7 +110,7 @@ pub fn view(currency_state: &mut CurrencyState) -> Container<Bl3Message> {
             .push(
                 Button::new(
                     &mut currency_state.max_eridium_button_state,
-                    Text::new("Max").font(JETBRAINS_MONO_BOLD).size(17),
+                    Text::new("Max").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(InteractionMessage::ManageSaveInteraction(
                     ManageSaveInteractionMessage::Currency(

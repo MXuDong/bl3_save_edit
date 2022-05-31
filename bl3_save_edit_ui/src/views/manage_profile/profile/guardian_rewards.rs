@@ -11,7 +11,7 @@ use bl3_save_edit_core::bl3_profile::guardian_reward::GuardianReward;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
 use crate::bl3_ui_style::{Bl3UiStyle, Bl3UiTooltipStyle};
-use crate::resources::fonts::{JETBRAINS_MONO, JETBRAINS_MONO_BOLD};
+use crate::resources::fonts::{ST_HEI_TI_LIGHT};
 use crate::views::manage_profile::profile::{GuardianRewardMessage, ProfileInteractionMessage};
 use crate::views::manage_profile::ManageProfileInteractionMessage;
 use crate::views::InteractionExt;
@@ -56,7 +56,7 @@ impl GuardianRewardField {
             .push(
                 TextMargin::new(&self.name, self.text_margin)
                     .0
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .size(17)
                     .color(Color::from_rgb8(220, 220, 220))
                     .width(Length::FillPortion(6)),
@@ -78,7 +78,7 @@ impl GuardianRewardField {
                     )
                     .0
                     .width(Length::FillPortion(3))
-                    .font(JETBRAINS_MONO)
+                    .font(ST_HEI_TI_LIGHT)
                     .padding(10)
                     .size(17)
                     .style(Bl3UiStyle)
@@ -88,7 +88,7 @@ impl GuardianRewardField {
                 )
                 .gap(10)
                 .padding(10)
-                .font(JETBRAINS_MONO)
+                .font(ST_HEI_TI_LIGHT)
                 .size(17)
                 .style(Bl3UiTooltipStyle),
             )
@@ -225,7 +225,7 @@ impl GuardianRewardUnlocker {
                 .push(
                     Container::new(
                         Text::new("Guardian Rewards")
-                            .font(JETBRAINS_MONO_BOLD)
+                            .font(ST_HEI_TI_LIGHT)
                             .size(17)
                             .color(Color::from_rgb8(242, 203, 5)),
                     )
@@ -278,7 +278,7 @@ impl GuardianRewardUnlocker {
                                     Button::new(
                                         &mut self.unlock_all_button_state,
                                         Text::new("Max All Guardian Rewards")
-                                            .font(JETBRAINS_MONO_BOLD)
+                                            .font(ST_HEI_TI_LIGHT)
                                             .size(17),
                                     )
                                     .on_press(InteractionMessage::ManageProfileInteraction(

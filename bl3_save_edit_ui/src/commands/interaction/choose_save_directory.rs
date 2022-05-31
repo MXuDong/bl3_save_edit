@@ -75,7 +75,7 @@ pub async fn load_files_in_directory(dir: PathBuf) -> Result<(PathBuf, Vec<Bl3Fi
     .await;
 
     if all_files.is_empty() {
-        bail!("No Save files or Profiles were found.")
+        bail!("没有找到存档或配置文件。")
     }
 
     if let Some(end_time) = tokio::time::Instant::now().checked_duration_since(start_time) {

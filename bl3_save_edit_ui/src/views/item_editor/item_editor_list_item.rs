@@ -7,7 +7,7 @@ use iced::{button, Button, Container, Element, Length, Row, Text};
 use bl3_save_edit_core::bl3_item::Bl3Item;
 
 use crate::bl3_ui::{Bl3Message, InteractionMessage};
-use crate::resources::fonts::JETBRAINS_MONO_BOLD;
+use crate::resources::fonts::ST_HEI_TI_LIGHT;
 use crate::views::item_editor::editor::Editor;
 use crate::views::item_editor::item_button_style::{
     ItemEditorButtonStyle, ItemEditorListButtonStyle, ItemEditorListNegativeButtonStyle,
@@ -64,7 +64,7 @@ impl ItemEditorListItem {
                 Button::new(
                     &mut self.duplicate_button_state,
                     Text::new("Duplicate")
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
                 )
@@ -79,7 +79,7 @@ impl ItemEditorListItem {
                 Button::new(
                     &mut self.share_button_state,
                     Text::new("Share")
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
                 )
@@ -94,7 +94,7 @@ impl ItemEditorListItem {
                 Button::new(
                     &mut self.delete_button_state,
                     Text::new("Delete")
-                        .font(JETBRAINS_MONO_BOLD)
+                        .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
                 )
