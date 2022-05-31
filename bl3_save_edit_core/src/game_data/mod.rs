@@ -1,6 +1,8 @@
 use std::fmt::Formatter;
 
 use anyhow::Result;
+
+// 导航点
 pub const FAST_TRAVEL: [GameDataKv; 864] = [
     GameDataKv { ident: "/game/gamedata/fasttravel/fts_atlashq.fts_atlashq", name: "Atlas HQ" },
     GameDataKv { ident: "/game/gamedata/fasttravel/fts_atlashq_sendonly.fts_atlashq_sendonly", name: "Atlas HQ" },
@@ -868,6 +870,7 @@ pub const FAST_TRAVEL: [GameDataKv; 864] = [
     GameDataKv { ident: "/game/patchdlc/takedown2/gamedata/leveltravel/lts_sanctuary3_td2.lts_sanctuary3_td2", name: "Sanctuary" },
 ];
 
+// 任务
 pub const MISSION: [GameDataKv; 208] = [
     GameDataKv { ident: "/Game/Missions/Plot/Mission_Ep01_ChildrenOfTheVault.Mission_Ep01_ChildrenOfTheVault_C", name: "Children of the Vault" },
     GameDataKv { ident: "/Game/Missions/Plot/Mission_Ep02_Sacrifice.Mission_Ep02_Sacrifice_C", name: "From the Ground Up" },
@@ -1079,6 +1082,7 @@ pub const MISSION: [GameDataKv; 208] = [
     GameDataKv { ident: "/Game/PatchDLC/Takedown2/Missions/Side/Mission_Takedown2_Intro.Mission_Takedown2_Intro_C", name: "Discovery: Takedown at the Guardian Breach" },
 ];
 
+// 房间装饰
 pub const PROFILE_ROOM_DECORATIONS: [GameDataKv; 100] = [
     GameDataKv { ident: "/Game/Pickups/RoomDecoration/RoomDecoration_34.RoomDecoration_34", name: "5KAGB8" },
     GameDataKv { ident: "/Game/Pickups/RoomDecoration/RoomDecoration_35.RoomDecoration_35", name: "5P8NKM3" },
@@ -1182,6 +1186,7 @@ pub const PROFILE_ROOM_DECORATIONS: [GameDataKv; 100] = [
     GameDataKv { ident: "/Game/PatchDLC/Raid1/Customizations/RoomDeco/RoomDeco_Raid1_1.RoomDeco_Raid1_1", name: "Wotan's Head" },
 ];
 
+// 枪械皮肤
 pub const PROFILE_WEAPON_SKINS: [GameDataKv; 32] = [
     GameDataKv { ident: "/Game/PatchDLC/VaultCard3/Gear/_Design/WeaponSkins/WeaponSkin_VC3_2.WeaponSkin_VC3_2", name: "Arms and Armor" },
     GameDataKv { ident: "/Game/Gear/WeaponSkins/_Design/SkinParts/WeaponSkin_15.WeaponSkin_15", name: "Black Dragon" },
@@ -1217,6 +1222,7 @@ pub const PROFILE_WEAPON_SKINS: [GameDataKv; 32] = [
     GameDataKv { ident: "/Game/Gear/WeaponSkins/_Design/SkinParts/WeaponSkin_2.WeaponSkin_2", name: "Thunderhead" },
 ];
 
+//枪械饰品
 pub const PROFILE_WEAPON_TRINKETS: [GameDataKv; 86] = [
     GameDataKv { ident: "/Game/PatchDLC/Alisma/Gear/WeaponTrinkets/_Shared/Trinket_League_BloodyHarvest_2020.Trinket_League_BloodyHarvest_2020", name: "A Shrinking Feeling" },
     GameDataKv { ident: "/Game/Gear/WeaponTrinkets/_Design/TrinketParts/WeaponTrinket_8.WeaponTrinket_8", name: "Action Axton" },
@@ -1306,6 +1312,7 @@ pub const PROFILE_WEAPON_TRINKETS: [GameDataKv; 86] = [
     GameDataKv { ident: "/Game/Gear/WeaponTrinkets/_Design/TrinketParts/WeaponTrinket_40.WeaponTrinket_40", name: "Wittle Warrior" },
 ];
 
+// ECHO 皮肤
 pub const PROFILE_ECHO_THEMES: [GameDataKv; 89] = [
     GameDataKv { ident: "/Game/PatchDLC/VaultCard2/Customizations/EchoDevice/ECHOTheme_VC2_4.ECHOTheme_VC2_4", name: "Advanced Alien Technology" },
     GameDataKv { ident: "/Game/PatchDLC/EventVDay/PlayerCharacters/_Shared/ECHODevice/EchoTheme_Valentines_02.EchoTheme_Valentines_02", name: "Affection Connection" },
@@ -1398,10 +1405,12 @@ pub const PROFILE_ECHO_THEMES: [GameDataKv; 89] = [
     GameDataKv { ident: "/Game/PatchDLC/VaultCard3/Customizations/EchoDevice/ECHOTheme_53.ECHOTheme_53", name: "Worlds Best Commander" },
 ];
 
+// ECHO 默认主题
 pub const PROFILE_ECHO_THEMES_DEFAULTS: [GameDataKv; 1] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/EchoDevice/ECHOTheme_Default.ECHOTheme_Default", name: "ECHO-3 Classic" },
 ];
 
+// 表情
 pub const PROFILE_EMOTES: [GameDataKv; 84] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Emotes/CustomEmote_Beastmaster_11_Chicken_Dance.CustomEmote_Beastmaster_11_Chicken_Dance", name: "Chicken Dance" },
     GameDataKv { ident: "/Game/PatchDLC/Geranium/Customizations/PlayerEmote/CustomEmote_Beastmaster_DLC3_1.CustomEmote_Beastmaster_DLC3_1", name: "Crossed Arms" },
@@ -1489,6 +1498,7 @@ pub const PROFILE_EMOTES: [GameDataKv; 84] = [
     GameDataKv { ident: "/Game/PatchDLC/Geranium/Customizations/PlayerEmote/CustomEmote_Siren_DLC3_2.CustomEmote_Siren_DLC3_2", name: "The Worm" },
 ];
 
+// 默认表情
 pub const PROFILE_EMOTES_DEFAULTS: [GameDataKv; 16] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Emotes/CustomEmote_Beastmaster_01_Wave.CustomEmote_Beastmaster_01_Wave", name: "Wave" },
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Emotes/CustomEmote_Beastmaster_02_Cheer.CustomEmote_Beastmaster_02_Cheer", name: "Cheer" },
@@ -1508,6 +1518,7 @@ pub const PROFILE_EMOTES_DEFAULTS: [GameDataKv; 16] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/SirenBrawler/Emotes/CustomEmote_Siren_04_Laugh.CustomEmote_Siren_04_Laugh", name: "Laugh" },
 ];
 
+// 大头大头
 pub const PROFILE_HEADS: [GameDataKv; 187] = [
     GameDataKv { ident: "/Game/PatchDLC/Customizations/PlayerCharacters/_Customizations/Beastmaster/Heads/CustomHead_Beastmaster_27.CustomHead_Beastmaster_27", name: "4NU Bust" },
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Heads/CustomHead_Beastmaster_4.CustomHead_Beastmaster_4", name: "4ction Figure" },
@@ -1698,6 +1709,7 @@ pub const PROFILE_HEADS: [GameDataKv; 187] = [
     GameDataKv { ident: "/Game/PatchDLC/Alisma/PlayerCharacters/_Customizations/_Shared/CustomHead_Siren_DLC4_01.CustomHead_Siren_DLC4_01", name: "Wired Science" },
 ];
 
+// 默认脑瓜
 pub const PROFILE_HEADS_DEFAULTS: [GameDataKv; 4] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Heads/CustomHead_Beastmaster_Default.CustomHead_Beastmaster_Default", name: "FL4K" },
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Gunner/Heads/CustomHead_Gunner_Default.CustomHead_Gunner_Default", name: "Moze" },
@@ -1705,6 +1717,7 @@ pub const PROFILE_HEADS_DEFAULTS: [GameDataKv; 4] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/SirenBrawler/Heads/CustomHead_Siren_Default.CustomHead_Siren_Default", name: "Amara" },
 ];
 
+// 衣服
 pub const PROFILE_SKINS: [GameDataKv; 268] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Skins/CustomSkin_Beastmaster_5.CustomSkin_Beastmaster_5", name: "Amp Stamp" },
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Skins/CustomSkin_Beastmaster_7.CustomSkin_Beastmaster_7", name: "Anshin Wash Only" },
@@ -1976,6 +1989,7 @@ pub const PROFILE_SKINS: [GameDataKv; 268] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/SirenBrawler/Skins/CustomSkin_Siren_12.CustomSkin_Siren_12", name: "Urban Blammo" },
 ];
 
+// 总不能裸着不是
 pub const PROFILE_SKINS_DEFAULTS: [GameDataKv; 4] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Beastmaster/Skins/CustomSkin_Beastmaster_Default.CustomSkin_Beastmaster_Default", name: "Beastmaster Skin Default" },
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/Gunner/Skins/CustomSkin_Gunner_Default.CustomSkin_Gunner_Default", name: "Gunner Skin Default" },
@@ -1983,6 +1997,8 @@ pub const PROFILE_SKINS_DEFAULTS: [GameDataKv; 4] = [
     GameDataKv { ident: "/Game/PlayerCharacters/_Customizations/SirenBrawler/Skins/CustomSkin_Siren_Default.CustomSkin_Siren_Default", name: "Siren Skin Default" },
 ];
 
+
+// 平衡器名称映射，枪械名称？
 pub const BALANCE_NAME_MAPPING: [GameDataKv; 774] = [
     GameDataKv { ident: "/game/gear/artifacts/_design/balancedefs/invbald_artifact_01_common", name: "White Artifact" },
     GameDataKv { ident: "/game/gear/artifacts/_design/balancedefs/invbald_artifact_02_uncommon", name: "Green Artifact" },
@@ -4197,6 +4213,7 @@ pub const BALANCE_TO_INV_KEY: [GameDataKv; 1435] = [
     GameDataKv { ident: "/hibiscus/enemies/zealot/ghost/_design/inventory/balance_hib_sm_dal_etech_invisiblezealots.balance_hib_sm_dal_etech_invisiblezealots", name: "BPInvPart_Dahl_SMG_C" },
     GameDataKv { ident: "/hibiscus/enemies/zealot/pilfer/_design/weapon/balance_sr_mal_etech_pilfer.balance_sr_mal_etech_pilfer", name: "BPInvPart_MAL_SR_C" },
 ];
+
 
 pub const VEHICLE_CHASSIS_OUTRUNNER: [&str; 4] = [
     "/Game/Vehicles/Outrunner/Design/WT_Outrunner_BuggyWheels.WT_Outrunner_BuggyWheels",
