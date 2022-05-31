@@ -117,10 +117,10 @@ impl std::default::Default for SduUnlocker {
         Self {
             backpack: SduUnlockField::new(0, SaveSduSlot::Backpack, CharacterSduMessage::Backpack, String::from("背包")),
             sniper: SduUnlockField::new(4, SaveSduSlot::Sniper, CharacterSduMessage::Sniper, String::from("狙击枪")),
-            heavy: SduUnlockField::new(0, SaveSduSlot::Heavy, CharacterSduMessage::Heavy, String::from("Heavy")),
+            heavy: SduUnlockField::new(0, SaveSduSlot::Heavy, CharacterSduMessage::Heavy, String::from("重型武器")),
             shotgun: SduUnlockField::new(4, SaveSduSlot::Shotgun, CharacterSduMessage::Shotgun, String::from("霰弹枪")),
             grenade: SduUnlockField::new(0, SaveSduSlot::Grenade, CharacterSduMessage::Grenade, String::from("手榴弹")),
-            smg: SduUnlockField::new(4, SaveSduSlot::Smg, CharacterSduMessage::Smg, String::from("smg")),
+            smg: SduUnlockField::new(4, SaveSduSlot::Smg, CharacterSduMessage::Smg, String::from("冲锋枪")),
             assault_rifle: SduUnlockField::new(
                 0,
                 SaveSduSlot::Ar,

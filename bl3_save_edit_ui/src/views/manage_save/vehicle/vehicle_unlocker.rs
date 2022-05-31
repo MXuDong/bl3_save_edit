@@ -86,17 +86,17 @@ impl std::default::Default for VehicleUnlocker {
     fn default() -> Self {
         Self {
             outrunner_chassis: VehicleUnlockCheckbox::new(
-                "Unlock All Outrunner Chassis (Wheels)",
+                "解锁所有冲锋车的地盘（轮胎）",
                 VehicleData::new(VehicleType::Outrunner(VehicleSubType::Chassis), 0),
                 VehicleUnlockedMessage::OutrunnerChassis,
             ),
             outrunner_parts: VehicleUnlockCheckbox::new(
-                "Unlock All Outrunner Parts",
+                "解锁所有冲锋车的零件",
                 VehicleData::new(VehicleType::Outrunner(VehicleSubType::Parts), 0),
                 VehicleUnlockedMessage::OutrunnerParts,
             ),
             outrunner_skins: VehicleUnlockCheckbox::new(
-                "Unlock All Outrunner Skins",
+                "解锁所有冲锋车的皮肤",
                 VehicleData::new(VehicleType::Outrunner(VehicleSubType::Skins), 0),
                 VehicleUnlockedMessage::OutrunnerSkins,
             ),

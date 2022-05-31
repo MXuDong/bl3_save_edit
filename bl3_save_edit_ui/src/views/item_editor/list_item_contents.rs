@@ -20,7 +20,7 @@ pub fn view(item: &Bl3Item) -> Column<InteractionMessage> {
     let mut tags_row = Row::new()
         .push(
             Container::new(
-                Text::new(format!("Level {}", item.level()))
+                Text::new(format!("等级 {}", item.level()))
                     .font(ST_HEI_TI_LIGHT)
                     .size(15),
             )

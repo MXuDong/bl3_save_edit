@@ -432,8 +432,8 @@ impl CurrentParts {
             }
         } else {
             let msg = match self.parts_tab_type {
-                CurrentPartType::Parts => "This item has no parts.",
-                CurrentPartType::Anointments => "This item has no anointments.",
+                CurrentPartType::Parts => "当前装备没有面板数据。",
+                CurrentPartType::Anointments => "当前面板没有受福数据",
             };
 
             current_parts_content = current_parts_content.push(no_parts_message(msg));

@@ -11,37 +11,37 @@ pub struct AmmoPoolData {
 pub enum AmmoPool {
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_Grenade.Resource_Ammo_Grenade",
-        to_string = "Grenade"
+        to_string = "手榴弹"
     )]
     Grenade,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_Pistol.Resource_Ammo_Pistol",
-        to_string = "Pistol"
+        to_string = "手枪"
     )]
     Pistol,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_Shotgun.Resource_Ammo_Shotgun",
-        to_string = "Shotgun"
+        to_string = "霰弹枪"
     )]
     Shotgun,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_SMG.Resource_Ammo_SMG",
-        to_string = "SMG"
+        to_string = "冲锋枪"
     )]
     Smg,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_AssaultRifle.Resource_Ammo_AssaultRifle",
-        to_string = "AR"
+        to_string = "步枪"
     )]
     Ar,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_Sniper.Resource_Ammo_Sniper",
-        to_string = "Sniper"
+        to_string = "狙击枪"
     )]
     Sniper,
     #[strum(
         serialize = "/Game/GameData/Weapons/Ammo/Resource_Ammo_Heavy.Resource_Ammo_Heavy",
-        to_string = "Heavy"
+        to_string = "重型武器"
     )]
     Heavy,
 }

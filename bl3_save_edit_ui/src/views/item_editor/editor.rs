@@ -74,7 +74,7 @@ impl Editor {
         let item_level_editor = Row::new()
             .push(
                 LabelledElement::create(
-                    "Level",
+                    "等级",
                     Length::Units(60),
                     Tooltip::new(
                         NumberInput::new(
@@ -92,7 +92,7 @@ impl Editor {
                         .size(17)
                         .style(Bl3UiStyle)
                         .into_element(),
-                        format!("Level must be between 1 and {}", MAX_CHARACTER_LEVEL),
+                        format!("等级必须在 1 和 {} 之间", MAX_CHARACTER_LEVEL),
                         tooltip::Position::Top,
                     )
                     .gap(10)
@@ -117,7 +117,7 @@ impl Editor {
             .push(
                 Container::new(
                     LabelledElement::create(
-                        "Serial",
+                        "序列号",
                         Length::Units(85),
                         TextInput::new(
                             &mut self.serial_input_state,
@@ -208,7 +208,7 @@ impl Editor {
             .push(
                 Container::new(
                     LabelledElement::create(
-                        "Balance",
+                        "平衡器",
                         Length::Units(130),
                         SearchablePickList::new(
                             &mut self.balance_input_state,
@@ -283,7 +283,7 @@ impl Editor {
             .push(
                 Container::new(
                     LabelledElement::create(
-                        "Manufacturer",
+                        "制造商",
                         Length::Units(130),
                         SearchablePickList::new(
                             &mut self.manufacturer_input_state,

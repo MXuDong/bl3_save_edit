@@ -2,9 +2,9 @@ use strum::Display;
 
 #[derive(Debug, Display, Clone, Eq, PartialEq)]
 pub enum AvailablePartType {
-    #[strum(to_string = "Available Parts")]
+    #[strum(to_string = "可选面板")]
     Parts,
-    #[strum(to_string = "Available Anointments")]
+    #[strum(to_string = "可选受福")]
     Anointments,
 }
 
@@ -16,9 +16,9 @@ impl std::default::Default for AvailablePartType {
 
 #[derive(Debug, Display, Clone, Eq, PartialEq)]
 pub enum CurrentPartType {
-    #[strum(to_string = "Current Parts")]
+    #[strum(to_string = "当前面板")]
     Parts,
-    #[strum(to_string = "Current Anointments")]
+    #[strum(to_string = "当前受福")]
     Anointments,
 }
 

@@ -201,7 +201,7 @@ impl AvailableParts {
                     });
 
                     let show_all_parts_checkbox =
-                        Checkbox::new(self.show_all_available_parts, "Show All Parts", move |c| {
+                        Checkbox::new(self.show_all_available_parts, "展示所有面板数据", move |c| {
                             interaction_message(
                                 ItemEditorInteractionMessage::ShowAllAvailablePartsSelected(c),
                             )
@@ -346,7 +346,7 @@ impl AvailableParts {
         } else {
             available_parts_column = available_parts_column.push(
                 Container::new(
-                    Text::new("No available parts or anointments found.")
+                    Text::new("没有找到可用面板或受福。")
                         .font(ST_HEI_TI_LIGHT)
                         .size(17)
                         .color(Color::from_rgb8(220, 220, 220)),

@@ -145,17 +145,17 @@ pub struct Bl3Part {
 
 #[derive(Debug, Copy, Clone, Hash, Eq, PartialEq, Ord, PartialOrd, Display, EnumString)]
 pub enum ItemType {
-    #[strum(serialize = "BPInvPart_Artifact_C", to_string = "Artifact")]
+    #[strum(serialize = "BPInvPart_Artifact_C", to_string = "神器")]
     Artifact,
-    #[strum(serialize = "BPInvPart_ClassMod_C", to_string = "Class Mod")]
+    #[strum(serialize = "BPInvPart_ClassMod_C", to_string = "模组")]
     ClassMod,
-    #[strum(serialize = "BPInvPart_GrenadeMod_C", to_string = "Grenade Mod")]
+    #[strum(serialize = "BPInvPart_GrenadeMod_C", to_string = "手榴弹模组")]
     GrenadeMod,
-    #[strum(serialize = "BPInvPart_Shield_C", to_string = "Shield")]
+    #[strum(serialize = "BPInvPart_Shield_C", to_string = "护盾")]
     Shield,
-    #[strum(to_string = "Weapon")]
+    #[strum(to_string = "枪械")]
     Weapon,
-    #[strum(to_string = "Other")]
+    #[strum(to_string = "其他")]
     Other,
 }
 
@@ -170,26 +170,26 @@ pub enum ItemRarity {
     #[strum(
         serialize = "01/Common",
         serialize = "01/Common (Starting Gear)",
-        to_string = "Common"
+        to_string = "一般"
     )]
     Common,
-    #[strum(serialize = "02/Uncommon", to_string = "Uncommon")]
+    #[strum(serialize = "02/Uncommon", to_string = "不一般")]
     Uncommon,
     #[strum(
         serialize = "03/Rare",
         serialize = "03/Rare E-Tech",
-        to_string = "Rare"
+        to_string = "稀缺"
     )]
     Rare,
     #[strum(
         serialize = "04/Very Rare",
         serialize = "04/Very Rare E-Tech",
-        to_string = "Very Rare"
+        to_string = "非常稀缺"
     )]
     VeryRare,
-    #[strum(serialize = "05/Legendary", to_string = "Legendary")]
+    #[strum(serialize = "05/Legendary", to_string = "传奇")]
     Legendary,
-    #[strum(serialize = "Named Weapon", to_string = "Unique Weapon")]
+    #[strum(serialize = "Named Weapon", to_string = "专属武器")]
     NamedWeapon,
     Unknown,
 }
@@ -202,17 +202,17 @@ impl std::default::Default for ItemRarity {
 
 #[derive(Debug, Clone, Eq, PartialEq, Ord, PartialOrd, Display)]
 pub enum WeaponType {
-    #[strum(to_string = "Pistol")]
+    #[strum(to_string = "手枪")]
     Pistol,
-    #[strum(to_string = "Shotgun")]
+    #[strum(to_string = "霰弹枪")]
     Shotgun,
-    #[strum(to_string = "SMG")]
+    #[strum(to_string = "冲锋枪")]
     Smg,
-    #[strum(to_string = "Assault Rifle")]
+    #[strum(to_string = "步枪")]
     Ar,
-    #[strum(to_string = "Sniper")]
+    #[strum(to_string = "狙击枪")]
     Sniper,
-    #[strum(to_string = "Heavy")]
+    #[strum(to_string = "重型武器")]
     Heavy,
 }
 

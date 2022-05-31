@@ -63,7 +63,7 @@ impl ItemEditorListItem {
             .push(
                 Button::new(
                     &mut self.duplicate_button_state,
-                    Text::new("Duplicate")
+                    Text::new("复制")
                         .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
@@ -78,7 +78,7 @@ impl ItemEditorListItem {
             .push(
                 Button::new(
                     &mut self.share_button_state,
-                    Text::new("Share")
+                    Text::new("分享")
                         .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
@@ -93,7 +93,7 @@ impl ItemEditorListItem {
             .push(
                 Button::new(
                     &mut self.delete_button_state,
-                    Text::new("Delete")
+                    Text::new("删除")
                         .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),

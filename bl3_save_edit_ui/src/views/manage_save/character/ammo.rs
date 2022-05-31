@@ -115,10 +115,10 @@ impl std::default::Default for AmmoSetter {
     fn default() -> Self {
         Self {
             sniper: AmmoSetterField::new(0, AmmoPool::Sniper, CharacterAmmoMessage::Sniper, String::from("狙击枪")),
-            heavy: AmmoSetterField::new(4, AmmoPool::Heavy, CharacterAmmoMessage::Heavy, String::from("Heavy")),
+            heavy: AmmoSetterField::new(4, AmmoPool::Heavy, CharacterAmmoMessage::Heavy, String::from("重型武器")),
             shotgun: AmmoSetterField::new(0, AmmoPool::Shotgun, CharacterAmmoMessage::Shotgun, String::from("霰弹枪")),
             grenade: AmmoSetterField::new(4, AmmoPool::Grenade, CharacterAmmoMessage::Grenade, String::from("手榴弹")),
-            smg: AmmoSetterField::new(0, AmmoPool::Smg, CharacterAmmoMessage::Smg, String::from("Smg")),
+            smg: AmmoSetterField::new(0, AmmoPool::Smg, CharacterAmmoMessage::Smg, String::from("冲锋枪")),
             assault_rifle: AmmoSetterField::new(
                 4,
                 AmmoPool::Ar,

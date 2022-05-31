@@ -982,7 +982,7 @@ where
     let serial_importer = Row::new()
         .push(
             LabelledElement::create(
-                "Import Serial",
+                "从序列号引用",
                 Length::Units(120),
                 Tooltip::new(
                     TextInputLimited::new(
@@ -1018,7 +1018,7 @@ where
         .push(
             Button::new(
                 &mut item_editor_state.import_serial_button_state,
-                Text::new("Import").font(ST_HEI_TI_LIGHT).size(17),
+                Text::new("引用").font(ST_HEI_TI_LIGHT).size(17),
             )
             .on_press(interaction_message(
                 ItemEditorInteractionMessage::ImportItemFromSerialPressed,
@@ -1032,7 +1032,7 @@ where
     let create_item_button = Container::new(
         Button::new(
             &mut item_editor_state.create_item_button_state,
-            Text::new("Create Item").font(ST_HEI_TI_LIGHT).size(17),
+            Text::new("创建").font(ST_HEI_TI_LIGHT).size(17),
         )
         .on_press(interaction_message(
             ItemEditorInteractionMessage::CreateItemPressed,
@@ -1046,7 +1046,7 @@ where
         Row::new()
             .push(
                 LabelledElement::create(
-                    "All Levels",
+                    "全部等级",
                     Length::Units(95),
                     Tooltip::new(
                         NumberInput::new(
@@ -1064,7 +1064,7 @@ where
                         .size(17)
                         .style(Bl3UiStyle)
                         .into_element(),
-                        format!("Level must be between 1 and {}", MAX_CHARACTER_LEVEL),
+                        format!("等级必须在 1 和 {} 之间。", MAX_CHARACTER_LEVEL),
                         tooltip::Position::Top,
                     )
                     .gap(10)
@@ -1080,7 +1080,7 @@ where
             .push(
                 Button::new(
                     &mut item_editor_state.all_item_levels_button_state,
-                    Text::new("Set").font(ST_HEI_TI_LIGHT).size(17),
+                    Text::new("设置").font(ST_HEI_TI_LIGHT).size(17),
                 )
                 .on_press(interaction_message(
                     ItemEditorInteractionMessage::SetAllItemLevelsPressed,
@@ -1208,7 +1208,7 @@ where
             {
                 curr = curr.push(
                     Container::new(
-                        Text::new(format!("{}s", item_type.to_string()))
+                        Text::new(format!("{}", item_type.to_string()))
                             .font(ST_HEI_TI_LIGHT)
                             .size(18)
                             .color(Color::from_rgb8(242, 203, 5)),
@@ -1308,7 +1308,7 @@ where
                         {
                             curr = curr.push(
                                 Container::new(
-                                    Text::new(format!("{}s", item_type.to_string()))
+                                    Text::new(format!("{}", item_type.to_string()))
                                         .font(ST_HEI_TI_LIGHT)
                                         .size(18)
                                         .color(Color::from_rgb8(242, 203, 5)),

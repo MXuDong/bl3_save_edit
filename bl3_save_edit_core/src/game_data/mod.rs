@@ -2340,7 +2340,7 @@ pub const BALANCE_NAME_MAPPING: [GameDataKv; 774] = [
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/garcia/balance/balance_sg_jak_garcia", name: "The Garcia" },
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/hellwalker/balance/balance_sg_jak_hellwalker", name: "Hellwalker" },
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/nimblejack/balance/balance_sg_jak_nimble", name: "Nimble Jack" },
-    GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/onepunch/balance/balance_sg_jak_onepunch", name: "One Pump Chump" },
+    GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/onepunch/balance/balance_sg_jak_onepunch", name: "单泵笨蛋" },
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/_legendary/sledge/balance/balance_sg_jak_lgd_sledge", name: "Sledge's Shotgun / Sledge's Super Shotgun" },
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/fingerbiter/balance/balance_sg_jak_fingerbiter", name: "Fingerbiter" },
     GameDataKv { ident: "/game/gear/weapons/shotguns/jakobs/_shared/_design/_unique/thewave/balance/balance_sg_jak_unique_wave", name: "T.K.'s Wave + variants" },

@@ -37,7 +37,7 @@ impl ItemEditorLootlemonItem {
             .push(
                 Button::new(
                     &mut self.import_button_state,
-                    Text::new("Import Item")
+                    Text::new("引用")
                         .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
@@ -52,7 +52,7 @@ impl ItemEditorLootlemonItem {
             .push(
                 Button::new(
                     &mut self.open_lootlemon_button_state,
-                    Text::new("Open on Lootlemon ➜")
+                    Text::new("在 Lootlemon 打开 ➜")
                         .font(ST_HEI_TI_LIGHT)
                         .size(16)
                         .horizontal_alignment(Horizontal::Center),
